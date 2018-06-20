@@ -1,0 +1,27 @@
+ext {
+  maven = [
+      name: 'admin',
+      password: 'bcadmin',
+      snapshot: 'http://svn.weiidu.com:8081/nexus/content/repositories/snapshots/',
+      repository: 'http://svn.weiidu.com:8081/nexus/content/repositories/android/',
+      library: 'com.baichang.android.library',
+      module: 'com.baichang.android.module'
+  ]
+  config = [
+      version: '0.0.1-alpha',
+      artifactId: 'config',
+      packaging: 'aar',
+      description: 'kotlin config library',
+      groupId: maven.library,
+      artifacts: 'config.aar'
+  ]
+
+  kotlin_common = [
+      version: '0.0.1-alpha',
+      artifactId: 'kt-common',
+      packaging: 'aar',
+      description: 'kotlin common library',
+      groupId: maven.library,
+      artifacts: 'kotlin.aar'
+  ]
+}
