@@ -1,3 +1,4 @@
-include ':kotlin-common'
-include ':kotlin-ex'
+include ':kotlin-common', ':kotlin-widget', ':kotlin-utils'
+include ':kotlin-extend'
 include ':kotlin-config'
+include ':kotlin-resource'

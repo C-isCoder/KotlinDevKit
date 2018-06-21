@@ -6,12 +6,10 @@ apply from: '../maven-config.gradle'
 
 android {
   compileSdkVersion android.cSdkVersion
-
   defaultConfig {
     minSdkVersion android.mSdkVersion
     targetSdkVersion android.tSdkVersion
   }
-
   buildTypes {
     release {
       minifyEnabled false
@@ -22,7 +20,27 @@ android {
 repositories {
   mavenCentral()
 }
-dependencies {
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+dependencies { implementation depend.kotlin }
+uploadArchives {
+  configuration = configurations.archives
+  repositories {
+    mavenDeployer {
+      snapshotRepository(url: maven.snapshot) {
+        authentication(userName: maven.name, password: maven.password)
+      }
+      repository(url: maven.repository) {
+        authentication(userName: maven.name, password: maven.password)
+      }
+      pom.project {
+        version kotlin_common.version
+        artifactId kotlin_common.artifactId
+        groupId kotlin_common.groupId
+        packaging kotlin_common.packaging
+        description kotlin_common.description
+      }
+    }
+  }
 }
-
+artifacts {
+  archives file(kotlin_common.artifacts)
+}

@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'maven'
+apply from: '../depend-config.gradle'
+apply from: '../maven-config.gradle'
+
+android {
+  compileSdkVersion android.cSdkVersion
+  defaultConfig {
+    minSdkVersion android.mSdkVersion
+    targetSdkVersion android.tSdkVersion
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+repositories {
+  mavenCentral()
+}
+dependencies {
+  implementation depend.v7
+  implementation depend.kotlin
+}
+uploadArchives {
+  configuration = configurations.archives
+  repositories {
+    mavenDeployer {
+      snapshotRepository(url: maven.snapshot) {
+        authentication(userName: maven.name, password: maven.password)
+      }
+      repository(url: maven.repository) {
+        authentication(userName: maven.name, password: maven.password)
+      }
+      pom.project {
+        version kotlin_resource.version
+        artifactId kotlin_resource.artifactId
+        groupId kotlin_resource.groupId
+        packaging kotlin_resource.packaging
+        description kotlin_resource.description
+      }
+    }
+  }
+}
+artifacts {
+  archives file(kotlin_resource.artifacts)
+}

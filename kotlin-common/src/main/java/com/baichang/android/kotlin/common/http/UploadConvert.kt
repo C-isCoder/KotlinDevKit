@@ -11,8 +11,8 @@ import java.io.File
  * Created by iCong on 06/01/2018.
  */
 object UploadConvert {
-  private val FILE_NOT_NULL = "文件不能为空"
-  private val FILE_PATH_NOT_NULL = "文件路径不能为空"
+  private const val FILE_NOT_NULL = "文件不能为空"
+  private const val FILE_PATH_NOT_NULL = "文件路径不能为空"
 
   fun getMultipartBody(path: String): MultipartBody.Part {
     if (TextUtils.isEmpty(path)) throw NullPointerException(FILE_PATH_NOT_NULL)

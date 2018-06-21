@@ -10,9 +10,7 @@ class ActivityCollector {
   companion object {
     private var activities: MutableList<Activity> = ArrayList()
 
-    fun hasLife(): Boolean {
-      return activities.size > 0
-    }
+    fun hasLife(): Boolean = activities.size > 0
 
     fun addActivity(activity: Activity) {
       if (!activities.contains(activity)) {
@@ -27,6 +25,11 @@ class ActivityCollector {
     fun finishAll() {
       activities.filterNot { it.isFinishing }
           .forEach { it.finish() }
+    }
+
+    fun exitApp() {
+      finishAll()
+      System.exit(0)
     }
   }
 }

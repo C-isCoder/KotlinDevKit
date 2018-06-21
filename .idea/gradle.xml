@@ -10,7 +10,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/kotlin-common" />
             <option value="$PROJECT_DIR$/kotlin-config" />
-            <option value="$PROJECT_DIR$/kotlin-ex" />
+            <option value="$PROJECT_DIR$/kotlin-extend" />
+            <option value="$PROJECT_DIR$/kotlin-resource" />
+            <option value="$PROJECT_DIR$/kotlin-utils" />
+            <option value="$PROJECT_DIR$/kotlin-widget" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

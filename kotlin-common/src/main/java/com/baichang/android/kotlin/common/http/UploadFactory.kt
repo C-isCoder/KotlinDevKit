@@ -47,7 +47,7 @@ object UploadFactory {
     clazz: Class<T>
   ): T {
     return Retrofit.Builder()
-        .baseUrl(Configuration<T>().get().API_UPLOAD_FILE)
+        .baseUrl(Configuration.get().getApiUploadFile())
         .client(client)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
@@ -60,29 +60,29 @@ object UploadFactory {
    *
    * @param url 上传接口
    */
-  fun <T> create(
-    url: String
-  ): T {
-    return Retrofit.Builder()
-        .baseUrl(url)
-        .client(client)
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-        .create(Configuration<T>().get().apiClazz)
-  }
+//  fun <T> create(
+//    url: String
+//  ): T {
+//    return Retrofit.Builder()
+//        .baseUrl(url)
+//        .client(client)
+//        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//        .addConverterFactory(GsonConverterFactory.create())
+//        .build()
+//        .create(Configuration<T>().get().apiClazz)
+//  }
 
   /**
    * 获取默认的上传请求
    */
-  fun <T> getInstance(): T {
-    return Retrofit.Builder()
-        .baseUrl(Configuration<T>().get().API_UPLOAD_FILE)
-        .client(client)
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-        .create(Configuration<T>().get().apiClazz)
-  }
+//  fun <T> getInstance(): T {
+//    return Retrofit.Builder()
+//        .baseUrl(Configuration<T>().get().API_UPLOAD_FILE)
+//        .client(client)
+//        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//        .addConverterFactory(GsonConverterFactory.create())
+//        .build()
+//        .create(Configuration<T>().get().apiClazz)
+//  }
 
 }

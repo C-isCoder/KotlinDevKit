@@ -1,4 +1,5 @@
 ext {
+
   maven = [
       name: 'admin',
       password: 'bcadmin',
@@ -7,9 +8,10 @@ ext {
       library: 'com.baichang.android.library',
       module: 'com.baichang.android.module'
   ]
-  config = [
+
+  kotlin_config = [
       version: '0.0.1-alpha',
-      artifactId: 'config',
+      artifactId: 'kt-config',
       packaging: 'aar',
       description: 'kotlin config library',
       groupId: maven.library,
@@ -22,6 +24,38 @@ ext {
       packaging: 'aar',
       description: 'kotlin common library',
       groupId: maven.library,
-      artifacts: 'kotlin.aar'
+      artifacts: 'kt_common.aar'
+  ]
+
+  kotlin_extend = [
+      version: '0.0.1-alpha',
+      artifactId: 'kt-extend',
+      packaging: 'aar',
+      description: 'kotlin extend function',
+      artifacts: 'kt_extend.aar'
+  ]
+
+  kotlin_resource = [
+      version: '0.0.1-alpha',
+      artifactId: 'kt-resource',
+      packaging: 'aar',
+      description: 'kotlin resource library',
+      artifacts: 'kt_resource.aar'
+  ]
+
+  kotlin_widget = [
+      version: '0.0.1-alpha',
+      artifactId: 'kt-widget',
+      packaging: 'aar',
+      description: 'kotlin widget library',
+      artifacts: 'kt_widget.aar'
+  ]
+
+  kotlin_utils = [
+      version: '0.0.1-alpha',
+      artifactId: 'kt-utils',
+      packaging: 'aar',
+      description: 'kotlin utils library',
+      artifacts: 'kt_utils.aar'
   ]
 }

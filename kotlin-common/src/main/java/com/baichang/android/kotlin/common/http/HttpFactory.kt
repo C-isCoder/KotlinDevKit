@@ -15,7 +15,7 @@ object HttpFactory {
       .connectTimeout(15, SECONDS)
       .readTimeout(15, TimeUnit.SECONDS)
       .writeTimeout(15, TimeUnit.SECONDS)
-      .addInterceptor(HttpInterceptor())
+      .addInterceptor(HttpInterceptor_())
       .build()
 
   /**
@@ -32,7 +32,7 @@ object HttpFactory {
         .baseUrl(url)
         .client(client)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(HttpResultConverter())
+        .addConverterFactory(HttpResultConverter_())
         .build()
         .create(clazz)
   }
@@ -46,10 +46,10 @@ object HttpFactory {
     clazz: Class<T>
   ): T {
     return Retrofit.Builder()
-        .baseUrl(Configuration<T>().get().API_DEFAULT_HOST)
+        .baseUrl(Configuration.get().getApiDefaultHost())
         .client(client)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(HttpResultConverter())
+        .addConverterFactory(HttpResultConverter_())
         .build()
         .create(clazz)
   }
@@ -59,29 +59,29 @@ object HttpFactory {
    *
    * @param url 接口地址
    */
-  fun <T> create(
-    url: String
-  ): T {
-    return Retrofit.Builder()
-        .baseUrl(url)
-        .client(client)
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(HttpResultConverter())
-        .build()
-        .create(Configuration<T>().get().apiClazz)
-  }
+//  fun <T> create(
+//    url: String
+//  ): T {
+//    return Retrofit.Builder()
+//        .baseUrl(url)
+//        .client(client)
+//        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//        .addConverterFactory(HttpResultConverter())
+//        .build()
+//        .create(Configuration<T>().get().apiClazz)
+//  }
 
   /**
    * 获取默认的请求
    *
    */
-  fun <T> getInstance(): T {
-    return Retrofit.Builder()
-        .baseUrl(Configuration<T>().get().API_DEFAULT_HOST)
-        .client(client)
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(HttpResultConverter())
-        .build()
-        .create(Configuration<T>().get().apiClazz)
-  }
+//  fun <T> getInstance(): T {
+//    return Retrofit.Builder()
+//        .baseUrl(Configuration.get().getApiDefaultHost())
+//        .client(client)
+//        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//        .addConverterFactory(HttpResultConverter())
+//        .build()
+//        .create(Configuration<T>().get().apiClazz)
+//  }
 }

@@ -18,9 +18,7 @@ class HttpResultConverter : Converter.Factory() {
     type: Type?,
     annotations: Array<out Annotation>?,
     retrofit: Retrofit?
-  ): Converter<ResponseBody, *>? {
-    return ResponseBodyConverter<Any>(type)
-  }
+  ): Converter<ResponseBody, *>? = ResponseBodyConverter<Any>(type)
 
   override fun requestBodyConverter(
     type: Type?,
@@ -29,10 +27,7 @@ class HttpResultConverter : Converter.Factory() {
     retrofit: Retrofit?
   ): Converter<*, RequestBody>? {
     return GsonConverterFactory.create()
-        .requestBodyConverter(
-            type, parameterAnnotations,
-            methodAnnotations, retrofit
-        )
+        .requestBodyConverter(type, parameterAnnotations, methodAnnotations, retrofit)
   }
 
   class ResponseBodyConverter<T>(private val type: Type?) : Converter<ResponseBody, T> {

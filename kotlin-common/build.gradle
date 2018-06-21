@@ -18,7 +18,6 @@ android {
     }
   }
 }
-
 dependencies {
   implementation depend.v7
   implementation depend.kt_retrofit
@@ -29,7 +28,6 @@ dependencies {
   implementation depend.kt_anko
   compileOnly project(':kotlin-config')
 }
-
 uploadArchives {
   configuration = configurations.archives
   repositories {
@@ -50,7 +48,6 @@ uploadArchives {
     }
   }
 }
-
 artifacts {
   archives file(kotlin_common.artifacts)
 }

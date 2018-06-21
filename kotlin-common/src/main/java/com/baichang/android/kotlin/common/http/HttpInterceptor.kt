@@ -40,13 +40,13 @@ class HttpInterceptor : Interceptor {
               "url   ->[Q_Q]     ：$url\n" +
               "host  ->[@_@]     ：${url?.host()}\n" +
               "token:->[*_*]     ：$token\n" +
-              "sign: ->[=_=]     ：${parameter.md5()}\n" +
+              "sign: ->[=_=]     ：${parameter.sign()}\n" +
               "method->[^_^]     ：${request?.method()}"
       )
     }
     buffer.flush()
     buffer.close()
-    nUrl?.addQueryParameter("sign", parameter.md5())
+    nUrl?.addQueryParameter("sign", parameter.sign())
     if (!TextUtils.isEmpty(token)) {
       nUrl?.addQueryParameter("token", token)
     }

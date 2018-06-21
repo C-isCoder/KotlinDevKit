@@ -43,17 +43,17 @@ object DownloadFactory {
    *
    * @param url 下载地址
    */
-  fun <T> create(
-    url: String
-  ): T {
-    return Retrofit.Builder()
-        .baseUrl(url)
-        .client(client)
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-        .create(Configuration<T>().get().apiClazz)
-  }
+//  fun <T> create(
+//    url: String
+//  ): T {
+//    return Retrofit.Builder()
+//        .baseUrl(url)
+//        .client(client)
+//        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//        .addConverterFactory(GsonConverterFactory.create())
+//        .build()
+//        .create(Configuration<T>().get().apiClazz)
+//  }
 
   /**
    * 创建下载请求
@@ -64,7 +64,7 @@ object DownloadFactory {
     clazz: Class<T>
   ): T {
     return Retrofit.Builder()
-        .baseUrl(Configuration<T>().get().API_DOWNLOAD_FILE)
+        .baseUrl(Configuration.get().getApiDownloadFile())
         .client(client)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
@@ -76,13 +76,13 @@ object DownloadFactory {
    * 获取默认的下载请求
    *
    */
-  fun <T> getInstance(): T {
-    return Retrofit.Builder()
-        .baseUrl(Configuration<T>().get().API_DOWNLOAD_FILE)
-        .client(client)
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-        .create(Configuration<T>().get().apiClazz)
-  }
+//  fun <T> getInstance(): T {
+//    return Retrofit.Builder()
+//        .baseUrl(Configuration<T>().get().API_DOWNLOAD_FILE)
+//        .client(client)
+//        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//        .addConverterFactory(GsonConverterFactory.create())
+//        .build()
+//        .create(Configuration<T>().get().apiClazz)
+//  }
 }
