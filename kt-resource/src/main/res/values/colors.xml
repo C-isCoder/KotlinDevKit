@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="transparent">@android:color/transparent</color>
+  <color name="half_transparent">#55000000</color>
+  <color name="white">@android:color/white</color>
+  <color name="black">@android:color/black</color>
+
+  <color name="top_bar_color">#FFFFFF</color>
+  <color name="top_bar_title_color">#000000</color>
+  <color name="background_color">#F9F9F9F9</color>
+
+  <color name="font_color_blue">#FF0DAFFA</color>
+  <color name="font_color_white">@android:color/white</color>
+  <color name="font_color_green">#FF7AC62D</color>
+  <color name="font_color_pink">#FFF75A6F</color>
+  <color name="font_color_pure">#FFBE23FF</color>
+  <color name="font_color_pure_dark">#FF7D13A9</color>
+  <color name="font_color_yellow">#FFFAA700</color>
+  <color name="font_color_red">#FFFF1133</color>
+  <color name="font_color_black">#FF000000</color>
+  <color name="font_color_blackCC">#FFCCCCCC</color>
+  <color name="font_color_blackDD">#FFDBD5DD</color>
+  <color name="font_color_blackBD">#FFBDBDBD</color>
+  <color name="font_color_black26">#FF262626</color>
+  <color name="font_color_black33">#FF333333</color>
+  <color name="font_color_black53">#FF535353</color>
+  <color name="font_color_black66">#FF666666</color>
+  <color name="font_color_black80">#FF808080</color>
+  <color name="font_color_black87">#FF878787</color>
+  <color name="font_color_black99">#FF999999</color>
+  <color name="font_color_black9E">#FF9E9E9E</color>
+
+  <color name="hint_font_color">#FFCCCCCC</color>
+  <color name="tips_font_color">#FF999999</color>
+
+  <color name="button_no_activate">#FFCCCCCC</color>
+
+  <color name="horizontal_line_color">#FFE5E5E5</color>
+
+</resources>
+

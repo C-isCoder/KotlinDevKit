@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'maven'
+apply from: '../depend-config.gradle'
+apply from: '../maven-config.gradle'
+
+
+android {
+  compileSdkVersion android.cSdkVersion
+  defaultConfig {
+    minSdkVersion android.mSdkVersion
+    targetSdkVersion android.tSdkVersion
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+dependencies {
+  implementation depend.glide
+  implementation depend.v7
+  implementation depend.recyclerView
+  annotationProcessor depend.glide_compiler
+  implementation depend.kotlin
+  implementation depend.kt_ktx
+  compileOnly project(':kt-config')
+  compileOnly project(':kt-resource')
+}
+repositories {
+  mavenCentral()
+}
+uploadArchives {
+  configuration = configurations.archives
+  repositories {
+    mavenDeployer {
+      snapshotRepository(url: maven.snapshot) {
+        authentication(userName: maven.name, password: maven.password)
+      }
+      repository(url: maven.repository) {
+        authentication(userName: maven.name, password: maven.password)
+      }
+      pom.project {
+        version kotlin_extend.version
+        artifactId kotlin_extend.artifactId
+        groupId kotlin_extend.groupId
+        packaging kotlin_extend.packaging
+        description kotlin_extend.description
+      }
+    }
+  }
+}
+artifacts {
+  archives file(kotlin_extend.artifacts)
+}

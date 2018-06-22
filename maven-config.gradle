@@ -15,7 +15,7 @@ ext {
       packaging: 'aar',
       description: 'kotlin config library',
       groupId: maven.library,
-      artifacts: 'config.aar'
+      artifacts: 'kt-config.aar'
   ]
 
   kotlin_common = [
@@ -24,7 +24,7 @@ ext {
       packaging: 'aar',
       description: 'kotlin common library',
       groupId: maven.library,
-      artifacts: 'kt_common.aar'
+      artifacts: 'kt-common.aar'
   ]
 
   kotlin_extend = [
@@ -32,7 +32,7 @@ ext {
       artifactId: 'kt-extend',
       packaging: 'aar',
       description: 'kotlin extend function',
-      artifacts: 'kt_extend.aar'
+      artifacts: 'kt-extend.aar'
   ]
 
   kotlin_resource = [
@@ -40,7 +40,7 @@ ext {
       artifactId: 'kt-resource',
       packaging: 'aar',
       description: 'kotlin resource library',
-      artifacts: 'kt_resource.aar'
+      artifacts: 'kt-resource.aar'
   ]
 
   kotlin_widget = [
@@ -48,7 +48,7 @@ ext {
       artifactId: 'kt-widget',
       packaging: 'aar',
       description: 'kotlin widget library',
-      artifacts: 'kt_widget.aar'
+      artifacts: 'kt-widget.aar'
   ]
 
   kotlin_utils = [
@@ -56,6 +56,6 @@ ext {
       artifactId: 'kt-utils',
       packaging: 'aar',
       description: 'kotlin utils library',
-      artifacts: 'kt_utils.aar'
+      artifacts: 'kt-utils.aar'
   ]
 }
