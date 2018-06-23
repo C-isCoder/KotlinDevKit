@@ -9,6 +9,15 @@ ext {
       module: 'com.baichang.android.module'
   ]
 
+  kotlin_kit = [
+      version: '0.0.1-alpha',
+      artifactId: 'kotlin-kit',
+      packaging: 'aar',
+      description: 'kotlin kit library',
+      groupId: maven.library,
+      artifacts: 'kotlin-kit.aar'
+  ]
+
   kotlin_config = [
       version: '0.0.1-alpha',
       artifactId: 'kt-config',

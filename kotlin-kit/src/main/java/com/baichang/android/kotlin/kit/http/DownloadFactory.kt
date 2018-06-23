@@ -1,6 +1,6 @@
-package com.baichang.android.kotlin.common.http
+package com.baichang.android.kotlin.kit.http
 
-import com.baichang.android.library.kotlin.config.Configuration
+import com.baichang.android.kotlin.kit.config.Configuration
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -10,20 +10,20 @@ import java.util.concurrent.TimeUnit
 /**
  * Created by iCong on 06/01/2018.
  */
-object UploadFactory {
+object DownloadFactory {
 
   private val httpClient = OkHttpClient.Builder()
-      .connectTimeout(1, TimeUnit.MINUTES)
-      .readTimeout(1, TimeUnit.MINUTES)
-      .writeTimeout(1, TimeUnit.MINUTES)
-      .addInterceptor(UploadInterceptor())
+      .connectTimeout(3, TimeUnit.MINUTES)
+      .readTimeout(3, TimeUnit.MINUTES)
+      .writeTimeout(3, TimeUnit.MINUTES)
+      .addInterceptor(DownloadInterceptor())
       .build()
 
   /**
-   * 创建上传请求
+   * 创建下载请求
    *
-   * @param url 上传接口
-   * @param clazz 上传接口类
+   * @param url 下载地址
+   * @param clazz 下载接口类
    */
   fun <T> create(
     url: String,
@@ -39,15 +39,15 @@ object UploadFactory {
   }
 
   /**
-   * 创建上传请求
+   * 创建下载请求
    *
-   * @param clazz 上传接口类
+   * @param clazz 下载接口类
    */
   fun <T> create(
     clazz: Class<T>
   ): T {
     return Retrofit.Builder()
-        .baseUrl(Configuration.get().getApiUploadFile())
+        .baseUrl(Configuration.getApiDownloadFile())
         .client(httpClient)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
@@ -56,16 +56,16 @@ object UploadFactory {
   }
 
   /**
-   * 获取默认的上传请求
+   * 获取默认的下载请求
+   *
    */
   fun <T> create(): T {
     return Retrofit.Builder()
-        .baseUrl(Configuration.get().getApiUploadFile())
+        .baseUrl(Configuration.getApiDownloadFile())
         .client(httpClient)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-        .create(Configuration.get().getServiceApi())
+        .create(Configuration.getServiceApi())
   }
-
 }

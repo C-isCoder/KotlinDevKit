@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/kotlin-kit" />
+            <option value="$PROJECT_DIR$/kt-common" />
+            <option value="$PROJECT_DIR$/kt-config" />
+            <option value="$PROJECT_DIR$/kt-extend" />
+            <option value="$PROJECT_DIR$/kt-resource" />
+            <option value="$PROJECT_DIR$/kt-utils" />
+            <option value="$PROJECT_DIR$/kt-widget" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

@@ -21,6 +21,8 @@ android {
 }
 dependencies {
   implementation depend.v7
+  implementation depend.design
+  implementation depend.recyclerView
   implementation depend.kt_retrofit
   implementation depend.kt_rx_android
   implementation depend.kt_rx_gson
@@ -28,10 +30,8 @@ dependencies {
   implementation depend.kt_ktx
   implementation depend.kt_anko
   implementation depend.glide
-  implementation depend.recyclerView
   annotationProcessor depend.glide_compiler
   implementation depend.kotlin
-  compileOnly project(":kt-config")
 }
 uploadArchives {
   configuration = configurations.archives
@@ -44,15 +44,15 @@ uploadArchives {
         authentication(userName: maven.name, password: maven.password)
       }
       pom.project {
-        version kotlin_common.version
-        artifactId kotlin_common.artifactId
-        groupId kotlin_common.groupId
-        packaging kotlin_common.packaging
-        description kotlin_common.description
+        version kotlin_kit.version
+        artifactId kotlin_kit.artifactId
+        groupId kotlin_kit.groupId
+        packaging kotlin_kit.packaging
+        description kotlin_kit.description
       }
     }
   }
 }
 artifacts {
-  archives file(kotlin_common.artifacts)
+  archives file(kotlin_kit.artifacts)
 }

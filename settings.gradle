@@ -1,4 +1,4 @@
-include ':kt-common'
+include ':kt-common', ':kotlin-kit'
 include ':kt-extend'
 include ':kt-config'
 include ':kt-resource'

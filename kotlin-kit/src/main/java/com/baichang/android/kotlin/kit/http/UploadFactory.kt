@@ -1,6 +1,6 @@
-package com.baichang.android.kotlin.common.http
+package com.baichang.android.kotlin.kit.http
 
-import com.baichang.android.library.kotlin.config.Configuration
+import com.baichang.android.kotlin.kit.config.Configuration
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -47,7 +47,7 @@ object UploadFactory {
     clazz: Class<T>
   ): T {
     return Retrofit.Builder()
-        .baseUrl(Configuration.get().getApiUploadFile())
+        .baseUrl(Configuration.getApiUploadFile())
         .client(httpClient)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
@@ -60,12 +60,12 @@ object UploadFactory {
    */
   fun <T> create(): T {
     return Retrofit.Builder()
-        .baseUrl(Configuration.get().getApiUploadFile())
+        .baseUrl(Configuration.getApiUploadFile())
         .client(httpClient)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-        .create(Configuration.get().getServiceApi())
+        .create(Configuration.getServiceApi())
   }
 
 }

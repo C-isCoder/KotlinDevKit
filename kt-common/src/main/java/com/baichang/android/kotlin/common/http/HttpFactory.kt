@@ -1,6 +1,6 @@
 package com.baichang.android.kotlin.common.http
 
-import com.baichang.android.kotlin.common.config.Configuration
+import com.baichang.android.library.kotlin.config.Configuration
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

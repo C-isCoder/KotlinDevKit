@@ -1,29 +1,28 @@
-package com.baichang.android.kotlin.common.http
+package com.baichang.android.kotlin.kit.http
 
-import com.baichang.android.library.kotlin.config.Configuration
+import com.baichang.android.kotlin.kit.config.Configuration
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import java.util.concurrent.TimeUnit.SECONDS
 
 /**
- * Created by iCong on 06/01/2018.
+ * Created by iCong on 2017/6/26.
  */
-object UploadFactory {
-
+object HttpFactory {
   private val httpClient = OkHttpClient.Builder()
-      .connectTimeout(1, TimeUnit.MINUTES)
-      .readTimeout(1, TimeUnit.MINUTES)
-      .writeTimeout(1, TimeUnit.MINUTES)
-      .addInterceptor(UploadInterceptor())
+      .connectTimeout(15, SECONDS)
+      .readTimeout(15, TimeUnit.SECONDS)
+      .writeTimeout(15, TimeUnit.SECONDS)
+      .addInterceptor(HttpInterceptor_())
       .build()
 
   /**
-   * 创建上传请求
+   * 创建请求
    *
-   * @param url 上传接口
-   * @param clazz 上传接口类
+   * @param url 接口地址
+   * @param clazz 接口类
    */
   fun <T> create(
     url: String,
@@ -33,39 +32,40 @@ object UploadFactory {
         .baseUrl(url)
         .client(httpClient)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(HttpResultConverter_())
         .build()
         .create(clazz)
   }
 
   /**
-   * 创建上传请求
+   * 创建请求
    *
-   * @param clazz 上传接口类
+   * @param clazz 接口类
    */
   fun <T> create(
     clazz: Class<T>
   ): T {
     return Retrofit.Builder()
-        .baseUrl(Configuration.get().getApiUploadFile())
+        .baseUrl(Configuration.getApiDefaultHost())
         .client(httpClient)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(HttpResultConverter_())
         .build()
         .create(clazz)
   }
 
   /**
-   * 获取默认的上传请求
+   * 创建请求  默认
+   *
    */
   fun <T> create(): T {
     return Retrofit.Builder()
-        .baseUrl(Configuration.get().getApiUploadFile())
+        .baseUrl(Configuration.getApiDefaultHost())
         .client(httpClient)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(HttpResultConverter_())
         .build()
-        .create(Configuration.get().getServiceApi())
+        .create(Configuration.getServiceApi())
   }
 
 }
