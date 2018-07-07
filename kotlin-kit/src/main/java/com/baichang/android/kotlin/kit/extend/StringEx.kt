@@ -28,7 +28,7 @@ fun String.keep2Number(): String = "%.2f".format(this)
  * String 格式化手机号空格分割
  * eg 176 8661 6852
  */
-fun String.formtMobileWithSpace(): String =
+fun String.formatMobileWithSpace(): String =
     if (this.length >= 11) "${this.substring(0, 3)} ${this.substring(3, 7)} ${this.substring(
         7, this.length
     )}" else this
@@ -38,7 +38,7 @@ fun String.formtMobileWithSpace(): String =
  *
  * @param parting 分隔符
  */
-fun String.formtMobile(parting: String): String =
+fun String.formatMobile(parting: String): String =
     if (this.length >= 11) "${this.substring(0, 3)}$parting${this.substring(
         3, 7
     )}$parting${this.substring(7, this.length)}" else this
