@@ -7,6 +7,12 @@
   <string formatted="false" name="fmt_longtime">yyyy年M月d日 %skk:mm</string>
   <string formatted="false" name="fmt_in60min">%d分钟前</string>
   <string name="fmt_just_now">1分钟内</string>
+  <string name="fmt_check_version">检测版本  v%s</string>
+  <string name="fmt_version">当前版本  v%s</string>
+  <string name="fmt_click_read">点击%s，即表示已阅读并同意《服务条款》</string>
+  <string name="fmt_no_read_message">未读消息%d条</string>
+  <string name="fmt_get_verify">%ds后重新获取</string>
+  <string name="fmt_remain_number">剩余%d次</string>
   <!-- day -->
   <string name="dawn">凌晨</string>
   <string name="morning">早上</string>
@@ -45,7 +51,6 @@
   <string name="mine">我的</string>
   <string name="password">密码</string>
   <string name="password_">密码：</string>
-  <string name="no_read_message">未读消息%d条</string>
   <string name="normal">正常</string>
   <string name="people_info">个人信息</string>
   <string name="avatar">头像</string>
@@ -62,7 +67,6 @@
   <string name="modify_password">修改密码</string>
   <string name="check_upgrade">检查更新</string>
   <string name="contacts_service">联系客服</string>
-  <string name="get_code_time">%ds后重新获取</string>
   <string name="phone_">手机号：</string>
   <string name="verify_">验证码：</string>
   <string name="verify">验证码</string>
@@ -77,7 +81,6 @@
   <string name="save">保存</string>
 
   <string name="tips_please_input_feed">请编写您的建议</string>
-  <string name="tips_please_input_feedback">请输入反馈内容</string>
   <string name="tips_please_get_code">请先获取验证码</string>
   <string name="tips_register_success">注册成功</string>
   <string name="tips_register_failed">注册失败</string>
@@ -105,10 +108,15 @@
   <string name="tips_follow_failed">验证失败</string>
   <string name="tips_follow_success">验证成功</string>
   <string name="tips_operate_success">操作成功</string>
+  <string name="tips_delete_success">删除成功</string>
   <string name="tips_operate_failed">操作失败</string>
-  <string name="tips_is_new_version">当前已是最新版本^_^</string>
-  <string name="tips_install_we_chat">请先安装微信</string>
-  <string name="tips_invite_clip">复制成功</string>
+  <string name="tips_delete_failed">删除失败</string>
+  <string name="tips_exchange_failed">兑换失败</string>
+  <string name="tips_exchange_success">兑换成功</string>
+  <string name="tips_favored_today">该品牌今天已经点过赞了哦</string>
+  <string name="tips_please_input_feedback">请输入反馈内容</string>
+  <string name="tips_confirm_delete">删除后无法恢复，确认删除？</string>
+  <string name="tips_address_info">详细地址：如道路、门牌号、小区名称、楼栋号、单元室等</string>
 
   <string name="we_chat_login">微信快捷登录</string>
   <string name="login_with_code">手机验证码登录</string>
@@ -150,21 +158,14 @@
   <string name="transfer">转账</string>
   <string name="_rmb">￥</string>
   <string name="confirm_transfer">确定转账</string>
-
-  <string name="_10">+10</string>
   <string name="business_des">商家介绍</string>
   <string name="favored">已赞</string>
   <string name="favor">点赞</string>
   <string name="my_task">我的任务</string>
   <string name="custom_service">客服</string>
-  <string name="check_version">检测版本  v%s</string>
   <string name="look_detail">查看明细</string>
-  <string name="current_balance">当前余额</string>
-  <string name="balance_in">昨日 +%d</string>
   <string name="go_complete">去完成</string>
   <string name="go_invite">去邀请</string>
-  <string name="remain_number">剩余%d次</string>
-  <string name="_10_">10通宝</string>
   <string name="person_info">个人信息</string>
   <string name="nick_name">昵称</string>
   <string name="user_id">用户ID</string>
@@ -174,16 +175,16 @@
   <string name="ali_pay">支付宝支付</string>
   <string name="filter">筛选</string>
   <string name="invite_success_get">每成功邀请一个好友即可获得</string>
-  <string name="today_get_number">今日已获得 %d 通宝</string>
   <string name="cooperation">商务合作</string>
-  <string name="mail"/>
+  <string name="mail">邮箱</string>
+  <string name="mail_">邮箱:</string>
   <string name="service_protocol">用户协议</string>
-  <string name="default_url">https://www.xiaofeitongbao.com</string>
   <string name="share_to">分享到</string>
-  <string name="click_reade">点击%s，即表示已阅读并同意《服务条款》</string>
   <string name="completed">已完成</string>
   <string name="congratulations">恭喜您!</string>
   <string name="progressing">处理中</string>
   <string name="_00">00</string>
-
+  <string name="delete">删除</string>
+  <string name="now_use">立即使用</string>
+  <string name="self_area">所在地区</string>
 </resources>
