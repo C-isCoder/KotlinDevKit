@@ -22,7 +22,7 @@ fun String.checkPassword(length: Int): Boolean = this.length >= length
  * String 保留小数字后两位
  *
  */
-fun String.keep2Number(): String = "%.2f".format(this)
+fun String.format2Decimal(): String = "%.2f".format(this)
 
 /**
  * String 格式化手机号空格分割
